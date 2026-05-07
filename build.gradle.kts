@@ -89,12 +89,13 @@ dependencies {
     ksp(libs.room.compiler)
     ksp(libs.hilt.compiler)
     testImplementation("junit:junit:4.13.2")
-    testImplementation(libs.bundles.testing)
+    testImplementation(libs.kotlin.coroutines.test)
     testImplementation(libs.room.testing)
-    testImplementation("androidx.arch.core:core-testing:2.2.0")
 
     androidTestImplementation("junit:junit:4.13.2")
     androidTestImplementation(libs.bundles.integration.testing)
     androidTestImplementation(libs.room.testing)
-    androidTestImplementation("androidx.test.uiautomator:uiautomator:2.2.0")
+
+    androidTestImplementation("androidx.test:runner:1.7.0")
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.10.0")
 }

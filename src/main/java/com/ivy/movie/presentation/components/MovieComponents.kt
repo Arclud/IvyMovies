@@ -68,6 +68,7 @@ fun MovieCard(
     Card(
         modifier = modifier
             .fillMaxWidth()
+            .testTagAndContentDescription(TestTags.movieCard(item.id, item.type.apiName))
             .clickable { onClick(item) },
         shape = RoundedCornerShape(8.dp),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
@@ -188,7 +189,12 @@ fun ShimmerCard(modifier: Modifier = Modifier) {
             MaterialTheme.colorScheme.surface.copy(alpha = alpha),
         )
     )
-    Card(modifier = modifier.fillMaxWidth(), shape = RoundedCornerShape(8.dp)) {
+    Card(
+        modifier = modifier
+            .fillMaxWidth()
+            .testTagAndContentDescription(TestTags.ShimmerCard),
+        shape = RoundedCornerShape(8.dp),
+    ) {
         Row(Modifier.padding(12.dp), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
             Spacer(Modifier.size(width = 76.dp, height = 112.dp).clip(RoundedCornerShape(8.dp)).background(brush))
             Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(10.dp)) {
